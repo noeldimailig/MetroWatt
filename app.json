@@ -1,14 +1,21 @@
 {
   "expo": {
     "name": "MetroWatt",
-    "slug": "MetroWatt",
+    "slug": "metrowatt",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "MetroWatt",
+    "scheme": "metrowatt",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/expo.icon",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "MetroWatt needs your location to map your e-bike ride.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "MetroWatt tracks your ride in the background while your screen is locked.",
+        "UIBackgroundModes": [
+          "location"
+        ]
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -17,7 +24,15 @@
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "FOREGROUND_SERVICE",
+        "FOREGROUND_SERVICE_LOCATION"
+      ],
+      "package": "com.anonymous.metrowatt"
     },
     "web": {
       "output": "server",
